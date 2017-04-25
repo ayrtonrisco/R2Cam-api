@@ -19,12 +19,6 @@ public class Application {
 		get("/r2cam", "application/json", (req, res) -> {
 			return r2;
 		}, new JsonTransformer());
-		put("/r2cam/:id", (req, res) -> {
-			// final short valor = Short.parseShort(req.body());
-			short var = 3;
-			r2.setDireccion(var);
-			return "ok";
-		}, new JsonTransformer());
 		put("/r2cam/direccion/", (req, res) -> {
 			final short valor = Short.parseShort(req.body());
 			r2.setDireccion(valor);
