@@ -1,0 +1,6 @@
+1º Accedemos al server por VPN.
+2º Instalamos el JDK y JDE versiones 8.
+  - apt-get install openjdk-8-jdk
+  - apt-get install openjdk-8-jre
+3º Accedemos al server mediante el Filezilla Client y subimos el jar del API que vamos a utilizar.
+4º Ejecutamos el jar mediante el comando java -jar R2Cam-api.jar
