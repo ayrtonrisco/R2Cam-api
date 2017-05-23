@@ -8,14 +8,15 @@ import me.r2cam.model.Motor;
 public class Application {
 
 	static Motor r2;
+	static Tweet tweet;
 
 	static String mensaje;
 
 	public static void main(String[] args) {
 		short direccion = 0;
 		r2 = new Motor("R2Cam", direccion);
+		tweet = new Tweet();
 		port(8080);
-		get("/test", (req, res) -> "Esto es un test");
 		get("/r2cam", "application/json", (req, res) -> {
 			return r2;
 		}, new JsonTransformer());
@@ -24,6 +25,12 @@ public class Application {
 			r2.setDireccion(valor);
 			return "hecho";
 		}, new JsonTransformer());
+		post("/r2cam/tweet/", (req, res) -> {
+			final String movil = req.body();
+			String resultado = tweet.realizarTweet(movil);
+			return resultado;
+		}, new JsonTransformer());
+		
 	}
 
 	public static void mensaje() {
