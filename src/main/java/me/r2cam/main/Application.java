@@ -10,7 +10,7 @@ public class Application {
 	static Motor r2;
 	static Tweet tweet;
 
-	static String mensaje;
+	static final String OK = "OK";
 
 	public static void main(String[] args) {
 		short direccion = 0;
@@ -23,7 +23,7 @@ public class Application {
 		put("/r2cam/direccion/", (req, res) -> {
 			final short valor = Short.parseShort(req.body());
 			r2.setDireccion(valor);
-			return "hecho";
+			return OK;
 		}, new JsonTransformer());
 		post("/r2cam/tweet/", (req, res) -> {
 			final String movil = req.body();
@@ -31,10 +31,6 @@ public class Application {
 			return resultado;
 		}, new JsonTransformer());
 		
-	}
-
-	public static void mensaje() {
-		System.out.println(mensaje);
 	}
 
 }
