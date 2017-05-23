@@ -16,7 +16,7 @@ public class Application {
 		short direccion = 0;
 		r2 = new Motor("R2Cam", direccion);
 		tweet = new Tweet();
-		port(8080);
+		port(8081);
 		get("/r2cam", "application/json", (req, res) -> {
 			return r2;
 		}, new JsonTransformer());
