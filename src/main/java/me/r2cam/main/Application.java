@@ -4,6 +4,7 @@ import static spark.Spark.*;
 
 import me.r2cam.json.JsonTransformer;
 import me.r2cam.model.Motor;
+import me.r2cam.twitter.Tweet;
 
 public class Application {
 

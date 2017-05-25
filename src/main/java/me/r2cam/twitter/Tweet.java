@@ -1,4 +1,4 @@
-package me.r2cam.main;
+package me.r2cam.twitter;
 
 import java.io.BufferedReader;
 import java.io.File;
